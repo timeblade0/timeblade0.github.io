@@ -1,1 +1,30 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Portal</title>
+</head>
+<body>
+    <h1>Game Portal</h1>
+    <ul id="gameList"></ul>
+
+    <script>
+        // Function to dynamically generate the game list
+        function generateGameList() {
+            const gameListElement = document.getElementById('gameList');
+            const gameFolders = ['orbit_example', 'game2', /* ... */]; // Add more game folders as needed
+
+            gameFolders.forEach(folder => {
+                const listItem = document.createElement('li');
+                const gameLink = document.createElement('a');
+                gameLink.href = `${folder}/index.html`;
+                gameLink.textContent = folder;
+                listItem.appendChild(gameLink);
+                gameListElement.appendChild(listItem);
+            });
+        }
+
+        // Call the function to generate the list
+        generateGameList();
+    </script>
+</body>
+</html>
